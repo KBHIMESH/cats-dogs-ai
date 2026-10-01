@@ -1,12 +1,11 @@
-import pathlib
 import streamlit as st
 import numpy as np
 from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import load_img, img_to_array
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
-base = pathlib.Path(r"C:\Users\Bhime\Desktop\dataset\cats_dogs_project")
-MODEL_PATH = base / "cats_dogs_model_V2_FIXED.h5"
+# FIXED: Use relative path - works everywhere
+MODEL_PATH = "cats_dogs_model_V2_FIXED.h5"
 
 @st.cache_resource
 def load_my_model():
